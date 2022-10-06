@@ -1,5 +1,6 @@
 .git/
 .idea/
+.env/
 client/
 **/__pycache__/
 m2m-relations/
