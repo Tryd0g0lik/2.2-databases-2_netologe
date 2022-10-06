@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+<<<<<<< HEAD
 from config import PASSWORD, USER_NAME
 
+=======
+from config import PASSW, USER
+>>>>>>> v-2
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,8 +79,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_orm_migrations',
+<<<<<<< HEAD
         'PASSWORD' : '....',
         'USER':'....',
+=======
+        "PASSWORD" : PASSW,
+        'USER' : USER,
+>>>>>>> v-2
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
