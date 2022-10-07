@@ -1,7 +1,7 @@
 .git/
 .idea/
-.env/
+orm_migrations/.env/
 client/
 **/__pycache__
 
-**/.env
+
