@@ -24,7 +24,8 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-class school(models.Model):
+class School(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='Уроки')
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='Уроки')
     lesson = models.CharField(max_length=20)
+    group = models.IntegerField()
