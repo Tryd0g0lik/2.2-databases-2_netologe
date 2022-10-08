@@ -1,7 +1,6 @@
 .git/
 .idea/
-.env/
 client/
 **/__pycache__
-
+**/#archive
 **/.env
