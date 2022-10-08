@@ -32,4 +32,3 @@ class Category(models.Model):
 class CategoryArticle(models.Model):
     articles = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='categories')
     categories = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories')
-
