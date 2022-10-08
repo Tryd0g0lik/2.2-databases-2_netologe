@@ -19,8 +19,8 @@ class Article(models.Model):
         return self.title
 
 class Category(models.Model):
-    category = models.CharField(max_length=30, db_index=True)
-    article = models.ManyToManyField(Article, related_name='category')
+    category = models.CharField(max_length=30, db_index=True, verbose_name='Категория')
+    article = models.ManyToManyField(Article, related_name='category', verbose_name='Статья')
 
     class Meta:
         verbose_name = 'Категория'
