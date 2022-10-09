@@ -10,7 +10,7 @@ class ArticleCategoryInline(admin.TabularInline):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'text', 'published_at', 'checkbox']
+    list_display = ['id', 'title', 'text', 'published_at']
     list_filter = ['published_at', 'categories']
     inlines = [ArticleCategoryInline, ]
 
