@@ -11,6 +11,7 @@ class Article(models.Model):
     published_at = models.DateTimeField(verbose_name='Дата публикации')
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
 
+    categories = models.ManyToManyField('Category', related_name='articles', verbose_name='Категория')
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
@@ -20,7 +21,7 @@ class Article(models.Model):
 
 class Category(models.Model):
     category = models.CharField(max_length=30, db_index=True, verbose_name='Категория')
-    article = models.ManyToManyField(Article, related_name='category', verbose_name='Статья')
+
 
     class Meta:
         verbose_name = 'Категория'
@@ -29,6 +30,6 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
-class CategoryArticle(models.Model):
-    articles = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='categories')
-    categories = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories')
+class ArticleCategory(models.Model):
+    articles = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='articles')
+    categories = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='article')

@@ -1,18 +1,19 @@
 from django.contrib import admin
 
-from .models import Article, Category, CategoryArticle
+from .models import Article, Category, ArticleCategory
 
 
-class CategoryInline(admin.TabularInline):
-    model = CategoryArticle
+class ArticleCategoryInline(admin.TabularInline):
+    model = ArticleCategory
     extra = 0
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'text', 'published_at']
     list_filter = ['published_at']
+    inlines = [ArticleCategoryInline, ]
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'category']
-    inlines = [CategoryInline,]
+
