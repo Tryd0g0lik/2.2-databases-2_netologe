@@ -12,7 +12,7 @@ class Article(models.Model):
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
 
 
-    categories = models.ManyToManyField('Category', related_name='articles', verbose_name='Категория')
+
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
