@@ -12,7 +12,9 @@ class ArticleAdminInline(admin.TabularInline):
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'text', 'published_at']
     list_filter = ['published_at']
+
     inlines = [ArticleAdminInline, ]
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
