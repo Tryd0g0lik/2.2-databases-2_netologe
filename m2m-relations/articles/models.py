@@ -38,5 +38,5 @@ class ArticleCategory(models.Model):
                                    verbose_name='Категории')
     checkbox_main = models.BooleanField(default=False,
                                         verbose_name='Основной')
-    checkbox_delete = models.BooleanField(default=False, verbose_name='Удалить')
+    # checkbox_delete = models.BooleanField(default=False, verbose_name='Удалить')
 
