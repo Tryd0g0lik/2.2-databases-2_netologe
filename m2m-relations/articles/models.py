@@ -9,10 +9,8 @@ class Article(models.Model):
     text = models.TextField(verbose_name='Текст')
 
     published_at = models.DateTimeField(verbose_name='Дата публикации')
-    image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
+    image = models.ImageField(null=True, blank=True, verbose_name='Изображение')
 
-
-    categories = models.ManyToManyField('Category', related_name='articles', verbose_name='Категория')
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
@@ -22,9 +20,6 @@ class Article(models.Model):
 
 class Category(models.Model):
     category = models.CharField(max_length=30, db_index=True, verbose_name='Категория')
-    pass
-
-
 
     class Meta:
         verbose_name = 'Категория'
@@ -34,8 +29,13 @@ class Category(models.Model):
         return self.category
 
 class ArticleCategory(models.Model):
-    articles = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='articles', verbose_name='СтатьЯЯ')
-    categories = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='article', verbose_name='Категории')
-    checkbox_main = models.BooleanField(db_index=True, default=False, verbose_name='Основной')
+    articles = models.ForeignKey(Article, on_delete=models.CASCADE,
+                                 related_name='articles',
+                                 verbose_name='Категории')
+    categories = models.ForeignKey(Category, on_delete=models.CASCADE,
+                                   related_name='article',
+                                   verbose_name='Категории')
+    checkbox_main = models.BooleanField(default=False,
+                                        verbose_name='Основной')
     checkbox_delete = models.BooleanField(default=False, verbose_name='Удалить')
 
