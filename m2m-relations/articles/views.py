@@ -15,3 +15,11 @@ def articles_list(request):
     ordering = '-published_at'
 
     return render(request, template, context)
+
+
+
+
+
+
+
+

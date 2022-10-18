@@ -14,7 +14,9 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['published_at']
 
     inlines = [ArticleAdminInline, ]
-
+    # pubs = Article.objects.select_related('id', 'title', 'text',
+    #                                       'published_at',
+    #                                       'category')
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
