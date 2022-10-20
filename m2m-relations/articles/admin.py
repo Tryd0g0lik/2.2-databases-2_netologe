@@ -20,6 +20,6 @@ class ArticleAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'category']
+    list_display = ['id', 'category',]
 
 
