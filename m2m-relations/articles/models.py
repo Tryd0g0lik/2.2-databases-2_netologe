@@ -10,7 +10,8 @@ class Article(models.Model):
     text = models.TextField(verbose_name='Текст')
 
     published_at = models.DateTimeField(verbose_name='Дата публикации')
-    image = models.ImageField(null=True, blank=True, verbose_name='Изображение')
+    image = models.ImageField(null=True, blank=True,
+                              verbose_name='Изображение')
 
     # category = models.ManyToManyField(
     #   'Category',
